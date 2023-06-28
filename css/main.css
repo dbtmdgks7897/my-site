@@ -1,0 +1,217 @@
+/* 전체 마진, 패딩 초기화 및 글자 색, 박스 사이징*/
+* {
+    margin: 0;
+    padding: 0;
+    color:aliceblue;
+    box-sizing: border-box;
+}
+/* 뷰포트에 맞게 높이 설정 */
+/* body{
+    min-height: 100vh; 
+} */
+/* 배경이미지 지정 */
+section{
+    background-image: url(../img/main_intro_car/genesis-kr-main-hero-gv80-230510-2560x900.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    
+}
+/* 마우스 올릴 시 하이라이트 설정 */
+a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    transition-duration: 0.5s;
+}
+a:hover{
+    color: white;
+    transition: color;
+    transition-duration: 0.5s;
+}
+/* ul에 점 없애기 */
+ul{
+    list-style: none;
+}
+/* 우측 하단 채팅 버튼 */
+.chatbot-box{
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+}
+
+/*  */
+.flex{
+    display: flex;
+}
+/* 네비게이션 바 */
+.navbar{
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 75px;
+    padding: 0% 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+/* 네비게이션 주 메뉴 */
+.navi{
+    width: 51vw;
+}
+.navi-li{
+    font-size: 15px;
+    margin-right: 53px;
+    white-space: nowrap;
+}
+/* 네비게이션 유틸 메뉴*/
+.util-navi-li{
+    font-size: 15px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+.un-icon, .un-text{
+    display: flex;
+    white-space: nowrap;
+}
+/* 메인 페이지 */
+.main{
+    padding-top: 75px;
+    height: 100vh;
+    align-items: center;
+}
+/* 좌측 선 두 줄 */
+.liner{
+    width: 20vw;
+    height: 8vh;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+}
+/* 중단 상단 설명*/
+.main-intro{
+    font-size: 7vh;
+    height: 100vh;
+    flex-direction: column;
+    padding: 100px 0px;
+    width: 60vw;
+    font-weight: normal;
+}
+.text-small{
+    font-size: 3vh;
+}
+.text-middle{
+    font-size: 4vh;
+}
+.text-big{
+    font-size: 5vh;
+    font-weight: bold;
+}
+/* 중단 하단 버튼 설정 */
+.downside-intro{
+    font-size: 20px;
+    margin-top: 50vh;
+}
+.downside-intro-ul{
+    width: 100%;
+    flex-direction: row;
+    white-space: nowrap; 
+}
+.downside-intro-ul > li {
+    margin-right: 20px;
+    font-size: 2vh;
+}
+/* 중단 하단 버튼 하이라이트 */
+.underline-trans:after {/*after 가상요소*/
+    display:block;/*a요소를 블록 요소라고 선언*/
+    /* width:70px;카테고리 메뉴 밑줄의 크기를 동일하게 주기 위해 width 설정 */
+               /*혹시 a요소 크기만큼 생기길 바란다면 width 삭제*/
+    content: '';/*comtent안은 밑줄 디자인을 위해 비워두세요.*/
+    border-bottom: solid 1px #fff;
+    transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+    transition: transform 250ms ease-out; /*변형 방식*/
+ }
+ .underline-trans:hover:after {
+    transform: scaleX(1);/*a 속성에 hover시 after를 기존 크기로 변경*/
+ }
+/* 하단 사진 넘기기 버튼 */
+.img-num-ul{
+    align-content: flex-end;
+    justify-content: center;
+}
+.img-num-ul > li {
+    margin:  0.7vw;
+}
+.img-num-icon{
+    border: 1px solid whitesmoke;
+}
+
+.our-model{
+    height: 100vh;
+    background-color: black;
+    padding: 20vh 15%;
+}
+.our-model-item{
+   display: grid;
+   width: 25vw;
+   height: 300px;
+   background-color: rgba(255, 255, 255, 0.05);
+   padding: 5vh 2vw;
+}
+.oui-image{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+/* 넓이 768px 이상 */
+@media screen and (min-width: 768px) {
+    
+    .small-navi{
+        display: none;
+    }
+}
+/* 넓이 767px 이하 */
+@media screen and (max-width: 767px) {
+    .downside-intro-ul{
+        width: 100%;
+        flex-direction: column;
+        white-space: nowrap; 
+    }
+    .liner{
+        display: none;
+    }
+    .main-intro{
+        font-size: 4vh;
+        height: 100vh;
+        flex-direction: column;
+        padding: 50px 20px;
+        width: 70vw;
+        font-weight: normal;
+    }
+    .intro-small{
+        font-size: 2vh;
+    }
+    .intro-middle{
+        font-size: 2vh;
+    }
+    .downside-intro{
+        font-size: 15px;
+        margin-top: 60vh;
+
+    }
+    .downside-intro-ul > li{
+        margin-top: 5vw;
+    }
+    .img-num-ul{
+        justify-content: flex-end;
+    }
+
+    .un-text{
+        display: none;
+    }
+    .navi{
+        display: none;
+    }
+    .small-navi{
+        display: block;
+    }
+}
